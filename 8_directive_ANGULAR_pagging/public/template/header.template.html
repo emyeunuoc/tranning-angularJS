@@ -1,0 +1,21 @@
+<nav class="navbar navbar-inverse" ng-controller="header">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="row">
+			<div class="col-xs-8">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">{{'BRAND' | translate}}</a>
+				</div>
+			</div>		
+			<div class="col-xs-4">		
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" ng-click="logout()">{{'LOGOUT' | translate}}</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div ng-controller="changeLanguage">
+		<button ng-click="changeLanguage('vn')">VietNam</button>
+		<button ng-click="changeLanguage('en')">English</button>
+	</div>
+</nav>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script type="text/javascript">
+		angular.module('myApp', [])
+			.controller('myController', ['$scope', function($scope){
+				$scope.students = [
+                        {name : "Nguyễn Văn Cường"},
+                        {name : "Nguyễn Văn Kính"},
+                        {name : "Nguyễn Văn Chính"},
+                        {name : "Nguyễn Văn Quyền"},
+                        {name : "Nguyễn Văn Trường"},
+                        {name : "Nguyễn Văn Hùng"},
+                        {name : "Nguyễn Văn Hiếu"},
+                        {name : "Nguyễn Văn Nghĩa"}
+                    ];
+			}]);
+	</script>
+	<style type="text/css">
+		.even{
+			background: lightgreen;
+		}
+		.odd{
+			background: lightblue;
+		}
+	</style>
+</head>
+<body ng-app="myApp">
+<div ng-controller="myController">
+	<h1> LIst</h1>
+	<table>
+		<tr ng-repeat="student in students">
+			<td ng-class-even="'even'" ng-class-odd="'odd'">{{student.name}}</td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>

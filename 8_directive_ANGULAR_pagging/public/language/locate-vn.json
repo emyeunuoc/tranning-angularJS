@@ -1,0 +1,33 @@
+{
+	"USERNAME":"Ten dang nhap",
+	"PASSWORD":"Mat khau",
+	"SIGNIN":"Dang nhap",
+	"BRAND" :"Trang ca nhan",
+	"LOGOUT":"Dang xuat",
+	"TABLE_USERNAME":"Ten dang nhap",
+	"TABLE_NAME":"Ten",
+	"TABLE_AGE":"Tuoi",
+	"TABLE_GENDER":"Gioi tinh",
+	"LOGIN_USER_CHECK_ENTER_USERNAME":"Ban phai nhap ten dang nhap",
+	"LOGIN_USER_CHECK_ENTER_LENGTH_LESS":"Ten dang nhap phai lon hon 5 ki tu",
+	"LOGIN_USER_CHECK_ENTER_LENGTH_MORE":"Ten dang nhap phai lon hon 64 ki tu",
+	"LOGIN_USER_CHECK_SPECIAL_CHARACTER":"Ten dang nhap ko duoc bo trong va chi duoc nhap chuoi bao gom chu cai hoac number ",
+	"LOGIN_PASSWORD_CHECK_ENTER_USERNAME":"Ban phai nhap ten dang nhap",
+	"LOGIN_PASSWORD_CHECK_ENTER_LENGTH_LESS":"Mat khau phai lon hon 5 ki tu",
+	"LOGIN_PASSWORD_CHECK_ENTER_LENGTH_MORE":"Mat khau phai lon hon 64 ki tu",
+	"LOGIN_PASSWORD_CHECK_SPECIAL_CHARACTER":"Mat khau ko duoc bo trong va chi duoc nhap chuoi bao gom chu cai,number dau - hoac _",
+	"LOGIN_WRONG":"Sai mat khau hoac password",
+
+	"LIST_INPUT_NAME":"Nhap ten nguoi dung:",
+	"LIST_TABLE_NAME":"Ten",
+	"LIST_TABLE_AGE":"Tuoi",
+	"LIST_TABLE_GENDER":"Gioi tinh",
+	"LIST_TABLE_BTN_DELETE":"Xoa",
+	"LIST_TABLE_GENDER_MALE":"Nam",
+	"LIST_TABLE_GENDER_FEMALE":"Nu",
+	"LIST_MODAL_HEADER_DELETE":"Xac nhan",
+	"LIST_MODAL_BODY_DELETE":"Ban co chac chan xoa",
+	"LIST_MODAL_BTN_CLOSE":"Dong",
+	"LIST_MODAL_BTN_SAVE":"Luu thay doi"
+
+}

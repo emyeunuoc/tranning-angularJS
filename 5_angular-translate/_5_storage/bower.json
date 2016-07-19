@@ -1,0 +1,24 @@
+{
+  "name": "_1_GettingStarted",
+  "authors": [
+    "emyeunuoc <namko317@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.5.7",
+    "angular-translate": "^2.11.0",
+    "angular-translate-storage-local": "^2.11.0",
+    "angular-cookies": "^1.5.7",
+    "angular-translate-storage-cookie": "^2.11.0"
+  }
+}

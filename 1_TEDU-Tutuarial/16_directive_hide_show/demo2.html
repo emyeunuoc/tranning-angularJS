@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script type="text/javascript">
+		angular.module('myApp', [])
+			.controller('myController', ['$scope', function($scope){
+				
+			}])
+	</script>
+	<style type="text/css">
+	</style>
+</head>
+
+<body ng-app="myApp">
+<div ng-controller="myController">
+	<h3>Hello</h3>
+	<h5>CLick on if you love her</h5>
+	<input type="checkbox" ng-model="o_checkbox"/>
+	<div>
+		<p>hihi</p>
+		<div ng-hide="o_checkbox" >
+			Yeu nl
+		</div>
+	</div>
+</div>
+</body>
+</html>

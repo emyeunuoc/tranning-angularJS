@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+	<script type="text/javascript">
+		angular.module('myApp', [])
+			.controller('myController', ['$scope', function($scope){
+				var date = new Date();
+				$scope.value = new Date(1970, 0, 1, date.getHours(), date.getMinutes(), date.getSeconds());
+			}]);
+	</script>
+</head>
+<body ng-app="myApp">
+<form ng-controller="myController" name="myForm">
+	THoi gian ra vao :<br>
+	<input type="time" name="input" ng-model="value" min="08:00:00" max="17:00:00" required />
+	<p>value = {{value | date:"HH:mm:ss"}}</p>
+	<p>myForm.input.$valid = {{myForm.input.$valid}}</p>
+	<p>myForm.input.$error = {{myForm.input.$error}}</p>
+	<p>myForm.$valid = {{myForm.$valid}}</p>
+	<p>myForm.$error = {{myForm.$error}}</p>
+</form>
+</body>
+</html>

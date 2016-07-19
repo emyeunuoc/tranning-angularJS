@@ -1,0 +1,20 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-2">
+			<input type="text" ng-model="$ctrl.query">
+			<select ng-model="$ctrl.order">
+				<option value="age">New</option>
+				<option value="name">Alphabet</option>
+			</select>
+		</div>
+		<div class="col-md-10"> 
+		<ul>
+			<li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.order">
+				<span>{{phone.name}}</span>
+				<p>{{phone.snippet}}</p>
+				<p>{{phone.age}}</p>
+			</li>
+		</ul>
+		</div>
+	</div>
+</div>

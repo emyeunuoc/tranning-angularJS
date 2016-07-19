@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script type="text/javascript">
+		angular.module('myApp', [])
+			.controller('myController', ['$scope', function($scope){
+				$scope.game = 'Khong';
+				$scope.tour = 'Khong';			
+			}]);
+	</script>
+</head>
+<body ng-app="myApp">
+<h1>SO thich</h1>
+<form ng-controller="myController">
+	CHoi game: <input type="checkbox" ng-model="game" ng-true-value="'Co'" ng-false-value="'Khong'"><br>
+	DU lick: <input type="checkbox" ng-model="tour" ng-true-value="'Co'" ng-false-value="'khong'"><br>
+	<h4>Your choice</h4>
+	<p>CHoi game = {{game}}</p>
+	<p>Du lick = {{tour}}</p>
+</form>
+</body>
+</html>

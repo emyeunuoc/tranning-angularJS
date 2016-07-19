@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+    <script>
+            angular.module('myApp', [])
+                    .controller('myController', ['$scope', function($scope) {
+                }]);
+    </script>
+    </head>
+    <body ng-app="myApp">
+        <div ng-controller="myController">
+            Name <input type="text" ng-model="name"><br>
+            Website: <input type="text" ng-model="website"><br>
+            <pre ng-bind-template="{{name}} and {{website}}"></pre>
+        </div>
+    </body>
+</html>

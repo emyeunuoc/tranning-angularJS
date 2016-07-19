@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script type="text/javascript">
+		angular.module('myApp', [])
+			.controller('myController', ['$scope', function($scope){
+				
+			}]);
+	</script>
+	<style type="text/css">
+		.base-class {
+		    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+		    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+		}
+		 
+		.base-class.my-class {
+		    color: red;
+		    font-size:3em;
+		}
+	</style>
+</head>
+<body ng-app="myApp">
+<div ng-controller="myController">
+	<p class="base-class" ng-class="value">Hello ng-class</p>
+	<button ng-click="value = 'my-class'">Animation</button>
+	<button ng-click="value = ''">No Animation</button>
+</div>
+
+</body>
+</html>

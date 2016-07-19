@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+	<style type="text/css">
+		.my-form{
+			background: #ffffff;
+			transform: all linear 1s;
+		}
+		.my-form.ng-invalid{
+			background: red;
+		}
+	</style>
+</head>
+	<script type="text/javascript">
+		angular.module('myApp', [])
+			.controller('myController', ['$scope', function($scope){
+				
+			}])
+	</script>
+<body ng-app="myApp">
+
+<form ng-controller="myController" class="my-form">
+	Username: <input ng-model="username" required />
+	<span class="error">Required</span><br>
+	<tt>userType = {{username}}</tt>
+</form>
+
+</body>
+</html>

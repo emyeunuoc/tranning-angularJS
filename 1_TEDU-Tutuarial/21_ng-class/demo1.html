@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script type="text/javascript">
+		angular.module('myApp', [])
+			.controller('myController', ['$scope', function($scope){
+				$scope.className = 'red border';
+			}]);
+	</script>
+	<style type="text/css">
+		.red{
+			padding: 20px;
+			background: red;
+			color: #ffffffl
+		}
+		.border{
+			border: solid 1px blue;
+		}
+	</style>
+</head>
+<body ng-app="myApp">
+<div ng-controller="myController">
+	<p ng-class="className">Hello</p>
+</div>
+</body>
+</html>

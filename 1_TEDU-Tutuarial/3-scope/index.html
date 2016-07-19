@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</head>
+<body ng-app="scopeDemo">
+<div ng-controller="myController">
+	<input type="text" ng-model="name" />
+	<button ng-click="sayHello()">Hello</button>
+	<div>{{name}}</div>	
+</div>
+
+<div ng-controller="topController">
+	<div ng-controller="classController">
+		<input type="text" ng-model="name" />
+		<button ng-click="sayHello()">Hello</button>
+		<div>{{name}}</div>	
+	</div>
+
+	<div ng-controller="schoolController">
+		<input type="text" ng-model="name" />
+		<button ng-click="sayHello()">Hello</button>
+		<div>{{name}}</div>	
+	</div>
+	{{name}}
+</div>
+<div>
+	{{name}}
+</div>
+</body>
+</html>

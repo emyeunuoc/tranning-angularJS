@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+</head>
+<script type="text/javascript">
+	
+	var myApp = angular.module('myApp', [])
+		.controller('myControler', ['$scope', function($scope){
+			
+		}]);
+
+</script>
+<style>
+	.my-input {
+                transition:all linear 0.5s;
+                background: #ffffff;
+    }
+    .my-input.ng-invalid {
+        color:white;
+        background: red;
+    }
+</style>
+<body ng-app="myApp">
+	<form ng-controller="myControler">
+		<input ng-model="val" ng-pattern="/^\d+$/" class="my-input" />
+	</form>
+</body>
+</html>

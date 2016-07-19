@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+</head>
+	<script type="text/javascript">
+		angular.module('myApp', [])
+			.controller('myController', ['$scope', function($scope){
+				
+			}])
+	</script>
+<body ng-app="myApp">
+<div ng-controller="myController">
+	<form>
+		<h5>Enter your name</h5>
+		<input ng-model="name"><br>
+		<h5>Your name</h5>
+		<span ng-bind="name"></span><br>
+		{{name}}
+
+	</form>
+</div>
+</body>
+</html>

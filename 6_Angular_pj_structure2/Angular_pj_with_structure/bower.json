@@ -1,0 +1,25 @@
+{
+  "name": "ANGULAR_smallProject",
+  "authors": [
+    "emyeunuoc <namko317@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-mocks": "1.5.x",
+    "angular-route": "1.5.x",
+    "bootstrap": "3.3.x",
+    "font-awesome": "^4.6.3",
+    "angular-local-storage": "^0.2.7"
+  }
+}

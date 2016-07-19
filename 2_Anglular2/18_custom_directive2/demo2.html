@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+	<script type="text/javascript">
+		angular.module('app', []).
+		controller('myController', ['$scope', function($scope){
+			
+		}]).
+		directive('ngValidatestring', function () {
+			return {
+				require: 'ngModel',
+				link:function (scope, element, attrs, tabsCtrl) {
+					var value1 = attrs.ngValidatestring;
+					var path = new RegExp(value1);
+					//console.log(path.test('@'));
+
+					tabsCtrl.$parsers.unshift(function(value) {
+						//console.log(value);
+						var valid = path.test(value);
+						console.log(valid)
+						tabsCtrl.$setValidity('blacklist', valid);
+			            return valid ? value : undefined;
+			        });
+
+
+
+				}
+			}
+
+		});
+	</script>
+</head>
+<body ng-controller="myController">
+<form name="myForm" >
+	<input name="myInput" ng-model="abc" ng-validatestring="^[a-z0-9-_]+$" required/>
+</form>
+myForm.myInput.$error.required = {{!!myForm.myInput.$error.required}}<br>
+myForm.myInput.$error.blacklist = {{!!myForm.myInput.$error}}
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script type="text/javascript">
+		var module = angular.module('myServiceModule', []);
+		module.controller('myController', ['$scope','kiem_tra_so_chan', function($scope,kiem_tra_so_chan){
+			$scope.xuat_thong_bao = function(){
+				kiem_tra_so_chan($scope.number);
+			}
+		}]);
+		module.service('kiem_tra_so_chan', ['$window', function($window){
+			return function(number){
+				if(number % 2 == 0){
+					$window.alert('so ' + number + ' la so chan');
+				}
+			}
+		}])
+	</script>
+</head>
+<body ng-app="myServiceModule">
+        <div ng-controller="MyController">
+        <p>Nhập vào số chẵn thì sẽ thông báo lên màn hình</p>
+        <input ng-model="number" ng-change="xuat_thong_bao()"/>
+      </div>
+    </body>
+</html>

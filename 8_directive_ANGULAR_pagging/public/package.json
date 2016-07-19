@@ -1,0 +1,19 @@
+{
+  "name": "angular",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "dependencies": {},
+  "description": ""
+}

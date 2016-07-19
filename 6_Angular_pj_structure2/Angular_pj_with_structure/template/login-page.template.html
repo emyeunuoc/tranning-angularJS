@@ -1,0 +1,68 @@
+<div class=" center-vertical" ng-controller="login">
+	<form class="form-horizontal" name="loginForm" ng-submit="submit(loginForm.$valid)" method="POST" novalidate>
+		<div class="form-group">
+			<label for="inputEmail3" class="col-xs-3 control-label">User</label>
+			<div class="col-xs-9">
+				<!-- USER -->
+				<input name="inputUser" type="text" class="form-control" id="inputEmail3" placeholder="User" ng-model="inputUser" ng-required="true" ng-maxlength="64" ng-minlength="5" ng-input-string="^[a-z0-9-_]+$">
+			
+			</div>
+		</div>
+		<div ng-show="loginForm.$submitted">
+			<div class="alert alert-danger" role="alert" ng-show="loginForm.inputUser.$error.required">
+				Phai nhap username
+			</div>
+			<div class="alert alert-danger" role="alert" ng-show="loginForm.inputUser.$error.minlength">
+				Username phai lon hon 5 ki tu
+			</div>
+			<div class="alert alert-danger" role="alert" ng-show="loginForm.inputUser.$error.maxlength">
+				Username phai nho hon 64 ki tu
+			</div>
+			<div class="alert alert-danger" role="alert" ng-show="loginForm.inputUser.$error.ngInputString">
+				User ko duoc bo trong va chi duoc nhap chuoi bao gom chu cai,number dau - hoac _
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="inputPassword3" class="col-xs-3 control-label">Password</label>
+			<div class="col-xs-9">
+			<!-- PASS -->
+				<input name="inputPassword" type="password" class="form-control" id="inputPassword3" placeholder="Password" ng-model="inputPassword" ng-required="true" ng-maxlength="64" ng-minlength="5" ng-input-string="^[a-z0-9-_]+$">		
+			</div>
+		</div>
+		<div ng-show="loginForm.$submitted">
+			<div class="alert alert-danger" role="alert" ng-show="loginForm.inputPassword.$error.required">
+				Phai nhap password
+			</div>
+			<div class="alert alert-danger" role="alert" ng-show="loginForm.inputPassword.$error.minlength">
+				Password phai lon hon 5 ki tu
+			</div>
+			<div class="alert alert-danger" role="alert" ng-show="loginForm.inputPassword.$error.maxlength">
+				Password phai nho hon 64 ki tu
+			</div>
+			<div class="alert alert-danger" role="alert" ng-show="loginForm.inputPassword.$error.ngInputString">
+				Mat khau ko duoc bo trong va chi duoc nhap chuoi bao gom chu cai,number dau - hoac _
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-xs-offset-2 col-xs-10">
+				<button type="submit" class="btn btn-danger">Sign in</button>
+			</div>
+		</div>
+		<div ng-show="loginForm.$submitted">
+			<div class="alert alert-danger" id="loginWrong" role="alert" ng-show="loginWrong">
+				Sai mat khau hoac password
+			</div>
+		</div>
+	</form>
+	
+	<!-- NOTIFY -->
+
+
+
+	<!---
+	loginForm.inputUser.$error.required = {{!!loginForm.inputUser.$error.required}}<br>
+	loginForm.inputPassword.$error.required = {{!!loginForm.inputPassword.$error.required}}<br>
+	loginForm.inputUser.$error.ngInputString = {{!!loginForm.inputUser.$error.ngInputString}}<br>
+	loginForm.inputPassword.$error.ngInputString = {{!!loginForm.inputPassword.$error.ngInputString}}<br>-->
+</div>
+

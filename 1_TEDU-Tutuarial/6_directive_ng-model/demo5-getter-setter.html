@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+	<script type="text/javascript">
+		angular.module('myApp', [])
+			.controller('myController', ['$scope', function($scope){
+				var _name = 'Duc';
+				$scope.user = {
+					name: function (newName) {
+						 return angular.isDefined(newName) ? (_name = newName) : _name; 
+					}
+				};
+			}]);
+	</script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="myController">
+		<form>
+			<h5>Enter your name</h5>
+			<input ng-model-options="{getterSetter:true}" ng-model="user.name" >
+			<h5>Your name</h5>
+			<span ng-bind="user.name()"></span>
+		</form>
+	</div>
+</body>
+</html>

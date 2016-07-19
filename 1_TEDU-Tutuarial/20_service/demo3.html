@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script type="text/javascript">
+		var module = angular.module('myServiceModule', []);
+		module.controller('myController', ['$scope','validate', function($scope, validate){
+			$scope.xuat_thong_bao = function(){
+				validate($scope.number);
+			}
+		}]);
+		module.service('validate', ['$window','kiem_tra_so_chan', function($window, kiem_tra_so_chan){
+			return function(number){
+				if(kiem_tra_so_chan(number)){
+					$window.alert('so ' + number + ' la so chan');
+				}
+			}
+		}]);
+		module.service('kiem_tra_so_chan', [function(){
+			return function(number){
+				return (number % 2 == 0);
+			}
+		}])
+	</script>
+</head>
+<body ng-app="myServiceModule">
+        <div ng-controller="myController">
+        <p>Nhập vào số chẵn thì sẽ thông báo lên màn hình</p>
+        <input ng-model="number" ng-change="xuat_thong_bao()"/>
+      </div>
+</body>
+</html>

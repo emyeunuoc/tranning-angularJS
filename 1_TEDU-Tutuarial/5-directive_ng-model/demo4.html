@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+</head>
+<style type="text/css">
+	.my-input:{
+		background: #ffffff;
+	}
+	.my-input.ng-invalid{
+		color:#ffffff;
+		background: red;
+	}
+</style>
+<body ng-app="myApp">
+<form ng-controller="myController" name="myForm">
+	<h2>{{message.title}}</h2>
+	<h5>{{message.num1_title}}</h5>
+	<input ng-model="num1" ng-required="true" ng-pattern="/^[0-9]+$/" class="my-input" ng-keyup="show_result()" />
+	<h5>{{message.num2_title}}</h5>
+	<input ng-model="num2" ng-required="true" ng-pattern="/^[0-9]+$/" class="my-input" ng-keyup="show_result()" />
+	<div style="{{styleresult}}">
+		{{message.cong}} {{	result.cong}} <br>
+		{{message.tru}} {{	result.tru}} <br>
+		{{message.nhan}} {{	result.nhan}} <br>
+		{{message.chia}} {{	result.chia}} <br>
+	</div>
+</form>
+<script type="text/javascript">
+	angular.module('myApp', [])
+		.controller('myController', ['$scope', function($scope){
+			$scope.message = {
+				title:'Tinh toan',
+				num1_title:'So 1', 
+				num2_title:'So 2', 
+				cong:'Cong',
+				tru:'Tru',
+				nhan:'nhan', 
+				chia:'chia'
+			};
+			$scope.styleresult = 'display:none';
+			$scope.show_result = function(){
+				if($scope.myForm.$valid){
+					$scope.styleresult = 'display:block';
+					$scope.result = {
+						cong : parseInt($scope.num1) + parseInt($scope.num2),
+						tru: parseInt($scope.num1) - parseInt($scope.num2),
+						nhan: parseInt($scope.num1) * parseInt($scope.num2),
+						chia: parseInt($scope.num1) / parseInt($scope.num2),
+					}
+					return;
+				}
+				$scope.styleresult = 'display:none';
+			}
+		}]);
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script type="text/javascript">
+		angular.module('myApp', [])
+			.controller('myController', ['$scope', function($scope){
+				$scope.login = function () {
+					 if ($scope.user == 'admin' && $scope.pass == '123456') {
+					 	alert('Login success');
+					 } else {
+					 	alert('LOgin failed');
+					 }
+				}
+			}])
+	</script>
+	<style type="text/css">
+		.my-form.ng-invalid{
+			color: red;
+		}
+	</style>
+</head>
+<body ng-app="myApp">
+<form ng-controller="myController" ng-submit="login()" class="my-form">
+	User:  
+	<input ng-pattern="/^([a-zA-Z0-9]+)$/" ng-model="user" ng-trim="true" ng-minlength="3" ng-maxlength="10" required 
+	><br>
+	Pass:
+	<input ng-model="pass" ng-trim="true" ng-minlength="3" ng-maxlength="10" required 
+	>
+	<input type="submit" value="login">
+</form>
+</body>
+</html>

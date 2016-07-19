@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="bower_components/angular-translate/angular-translate.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="Ctrl">
+		<h2 id="{{headline}}">{{'HEADLINE' | translate}}</h2>
+		<p>{{'PARAGRAPH' | translate}}</p>
+		<p>{{'NAMESPACE.PARAGRAPH' | translate}}</p>
+	</div>
+</body>
+</html>

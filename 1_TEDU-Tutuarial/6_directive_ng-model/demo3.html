@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+</head>
+<script type="text/javascript">
+	angular.module('myApp', [])
+		.controller('myController', ['$scope', function($scope){
+			
+		}])
+</script>
+<body ng-app="myApp">
+<form ng-controller="myController">
+	<input ng-model='val' ng-model-options="{debounce:1000}"><br>
+	<span ng-bind="val"></span>
+</form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+	<script type="text/javascript">
+		angular.module('myApp', [])
+			.controller('myController', ['$scope', function($scope){
+				$scope.reload = 'Chua reload trang';
+				$scope.list = [];
+				$scope.submit = function () {
+					 if($scope.text.trim()){
+					 	$scope.list.unshift($scope.text);
+					 }
+					 $scope.text = '' ;
+				}
+			}])
+	</script>
+</head>
+<body ng-app="myApp">
+	<form ng-controller="myController" ng-submit="submit()">
+		<input ng-model="reload"> : {{reload}} <br>
+		Enter student name
+		<input ng-model="text">
+		<input type="submit" value="Add">
+		DAnh sach: <pre> list = {{list}}</pre>
+	</form>
+</body>
+</html>

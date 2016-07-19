@@ -1,0 +1,1 @@
+angular.module('phonecatApp', ['ngRoute','core','phone-list','phone-detail']);

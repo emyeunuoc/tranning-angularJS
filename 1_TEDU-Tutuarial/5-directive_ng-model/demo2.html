@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+</head>
+<script type="text/javascript">
+	var myApp = angular.module('myApp', [])
+		.controller('myController', ['$scope', function($scope){
+			
+		}])
+</script>
+<style type="text/css">
+	.my-form{
+		transform: all linear 1s;
+	}
+	.my-form.ng-pristine{
+		border: 5px solid blue;
+	}
+	.my-form.ng-dirty.ng-invalid-pattern{
+		border: 5px solid red;
+	}
+	.my-form.ng-dirty.ng-valid-pattern{
+		border: 5px solid green;
+	}
+
+
+
+
+</style>
+
+<body ng-app="myApp">
+
+<form ng-controller="myController" class="my-form">
+	<ul>
+		<li> Nhap so : <input ng-model="val1" ng-pattern="/^\d+$/" class="my-input"> </li>
+		<li> Nhap so : <input ng-model="val2" ng-pattern="/^\d+$/" class="my-input"> </li>
+		<li> Nhap so : <input ng-model="val3" ng-pattern="/^\d+$/" class="my-input"> </li>
+	</ul>
+</form>
+</body>
+</html>

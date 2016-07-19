@@ -1,0 +1,39 @@
+[
+    {
+        "age": 20, 
+        "username": "abcdef", 
+        "name": "Huy", 
+        "gender": "male"
+    },
+    {
+        "age": 28, 
+        "username": "okok", 
+        "name": "Tuan", 
+        "gender": "male"
+    },
+    {
+        "age": 10, 
+        "username": "anh123", 
+        "name": "THanh", 
+        "gender": "female"
+    },
+    {
+        "age": 22, 
+        "username": "ahihi", 
+        "name": "Nam", 
+        "gender": "male"
+    },
+    {
+        "age": 28, 
+        "username": "dongoc", 
+        "name": "HAi", 
+        "gender": "male"
+    },
+    {
+        "age": 21, 
+        "username": "thanhnienxom", 
+        "name": "Hien", 
+        "gender": "female"
+    }
+]
+

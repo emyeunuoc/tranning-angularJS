@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+	<script type="text/javascript">
+		angular.module('myApp', [])
+			.controller('myController', ['$scope', function($scope){
+				$scope.value = new Date();
+			}]);
+	</script>
+</head>
+<body ng-app="myApp">
+<form ng-controller="myController" name="myForm">
+	NHap vao 1 ngay thang nam cua 2014 <br>
+	<input name="input" type="datetime-local" ng-model="value" min="2014-01-01T00:00:00" max="2014-12-31T00:00:00" required /><br>
+	<p>{{value| date:'dd/MM/yyTHH:mm:ss'}}</p>
+	<p>myForm.input.$valid = {{myForm.input.$valid}}</p>
+	<p>myForm.input.$error = {{myForm.input.$error}}</p>
+	<p>myForm.$valid = {{myForm.$valid}} </p>
+	<p>myForm.$error.required = {{!!myForm.$error.required}}</p>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+</head>
+	<script type="text/javascript">
+		var app = angular.module('app', []);
+		app.controller('filterDemoCtrl', filterDemoCtrl);
+		filterDemoCtrl.$inject = ['$scope'];
+		function filterDemoCtrl($scope){
+			var employees = [
+				{name:'Hai',birthDate:new Date('12/02/1989'),salary:12000000,gender:'male',status:true},
+				{name:'HUong',birthDate:new Date('06/15/1990'),salary:18000000,gender:'male',status:true},
+				{name:'hoa',birthDate:new Date('12/02/1993'),salary:12000000,gender:'male',status:false},
+				{name:'duc',birthDate:new Date('12/02/1995'),salary:2000000,gender:'female',status:true},
+				{name:'vi',birthDate:new Date('12/02/1988'),salary:10000000,gender:'male',status:false},
+				{name:'thao',birthDate:new Date('12/02/1986'),salary:11000000,gender:'male',status:true}
+			];
+			$scope.employees = employees;
+			$scope.limitRowMax = 6;
+			$scope.limitRowMin = 0;
+		}
+		app.filter('status', function () {
+			return function (input) {
+				if(input == true)
+					return 'KIch hoat';
+				else 
+					return 'khoa' 
+			}
+		});
+	</script>
+<body ng-app="app">
+	<div ng-controller="filterDemoCtrl">
+		Show:<input type="number" ng-model="limitRowMin"> TO <input type="number" ng-model="limitRowMax"> <br>
+		<table class="table">
+			<tr ng-repeat="employee in employees | limitTo:limitRowMax:limitRowMin">
+				<td>{{employee.name | uppercase}}</td>
+				<td>{{employee.birthDate | date:"dd/mm/yyyy"}}</td>
+				<td>{{employee.salary | number:0}}</td>
+				<td>{{employee.gender | lowercase}}</td>
+				<td>{{employee.status | status}}</td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>

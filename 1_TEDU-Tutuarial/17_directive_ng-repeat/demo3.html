@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script type="text/javascript">
+		angular.module('myApp', [])
+			.controller('myController', ['$scope', function($scope){
+				$scope.items = {
+					name:'duc',
+					age:20,
+					friend:['tuan','ha'],
+					job:{
+						name:'dev',
+						school:'fpt'
+					}
+				}
+			}])
+	</script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="myController">
+	<div ng-repeat="(key, value) in items">
+		{{key}} -- {{value}}
+	</div>
+</div>
+</body>
+</html>
