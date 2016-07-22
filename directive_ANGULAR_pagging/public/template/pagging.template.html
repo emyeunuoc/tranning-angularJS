@@ -1,0 +1,26 @@
+<nav>
+	<ul class="pagination">
+		<li class="{{currentPage == 1 ? 'disabled' : ''}}"><a href="" ng-click="prev()">Previous</a></li>
+
+		<li class="{{isActive(key + 1)}}" ng-if="isHead()" ng-repeat="(key, value) in getNumber()  track by $index">
+			<a href="" ng-click="changePage(key + 1 )">{{key + 1 }}</a>
+		</li>
+		<li class="{{isActive(countPage() + key - 9 )}}" ng-if="isTail()" ng-repeat="(key, value) in getNumber()  track by $index">
+			<a href="" ng-click="changePage(countPage() + key - 9)">{{countPage() + key - 9}}</a>
+		</li>
+
+		<li class="{{isActive(currentPage - 5 + key)}}" ng-if="isCenter()" ng-repeat="(key, value) in getNumber()  track by $index">
+			<a href="" ng-click="changePage(currentPage - 5 + key)">{{currentPage - 5 + key}}</a>
+		</li>
+
+
+		<li class="{{countPage() == currentPage ? 'disabled' : ''}} " ng-click="next()"><a href="">Next</a></li>
+		<li class="{{countPage() == currentPage ? 'disabled' : ''}} " ng-click="changePage(countPage())"><a href="">LAST</a></li>
+	</ul>
+</nav>
+<!--
+<h1>NUmpage:{{countPage()}}</h1>
+<h1>isTail:{{isTail()}}</h1>
+<h1>isHead:{{isHead()}}</h1>
+<h1>isCenter:{{isCenter()}}</h1>
+-->
