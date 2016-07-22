@@ -1,0 +1,33 @@
+{
+	"USERNAME":"Username",
+	"PASSWORD":"password",
+	"SIGNIN":"Sign in",
+	"BRAND" :"User Page",
+	"LOGOUT":"Logout",
+	"TABLE_USERNAME":"Username",
+	"TABLE_NAME":"Name",
+	"TABLE_AGE":"Age",
+	"TABLE_GENDER":"Gender",
+
+	"LOGIN_USER_CHECK_ENTER_USERNAME":"You must enter username",
+	"LOGIN_USER_CHECK_ENTER_LENGTH_LESS":"Username must be more than 5 characters",
+	"LOGIN_USER_CHECK_ENTER_LENGTH_MORE":"Username must be less than 64 characters",
+	"LOGIN_USER_CHECK_SPECIAL_CHARACTER":"Username include abc or 123 characters",
+	"LOGIN_PASSWORD_CHECK_ENTER_USERNAME":"You must enter password",
+	"LOGIN_PASSWORD_CHECK_ENTER_LENGTH_LESS":"Password must be more than 5 characters",
+	"LOGIN_PASSWORD_CHECK_ENTER_LENGTH_MORE":"Password must be less than 64 characters",
+	"LOGIN_PASSWORD_CHECK_SPECIAL_CHARACTER":"",
+	"LOGIN_WRONG":"Wrong username or password",
+
+	"LIST_INPUT_NAME":"Enter name:",
+	"LIST_TABLE_NAME":"Name",
+	"LIST_TABLE_AGE":"Age",
+	"LIST_TABLE_GENDER":"Gender",
+	"LIST_TABLE_BTN_DELETE":"Delete",
+	"LIST_TABLE_GENDER_MALE":"Male",
+	"LIST_TABLE_GENDER_FEMALE":"Female",
+	"LIST_MODAL_HEADER_DELETE":"Confirm",
+	"LIST_MODAL_BODY_DELETE":"Are you sure delete ",
+	"LIST_MODAL_BTN_CLOSE":"Close",
+	"LIST_MODAL_BTN_SAVE":"Save change"
+}

@@ -1,0 +1,86 @@
+<div ng-include="'template/header.template.html'" ></div>
+<div ng-controller="listUser">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-3 "></div>
+			<div class="col-xs-3 has-success">
+				<label class="control-label">{{'LIST_INPUT_NAME' | translate}}</label>
+				<input type="text" class="form-control" ng-model="search.name">
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<table class="table table-hover">
+				<tr>
+					<th class="active" ng-class="{'sortActive':nameOrder=='id'}"  ng-click="order('id')">
+						ID 
+						<i class="fa" aria-hidden="true" ng-class="{'fa-arrow-up':setSortIcon('id'),'fa-arrow-down':setSortIconDESC('id')}" ></i>
+					</th>
+					<th class="active" ng-class="{'sortActive':nameOrder=='username'}"  ng-click="order('username')">
+						{{'USERNAME' | translate}} 
+						<i class="fa" aria-hidden="true" ng-class="{'fa-arrow-up':setSortIcon('username'),'fa-arrow-down':setSortIconDESC('username')}"></i>
+					</th>
+					<th class="active" ng-class="{'sortActive':nameOrder=='name'}"  ng-click="order('name')">
+						{{'LIST_TABLE_NAME' | translate}} 
+						<i class="fa" aria-hidden="true" ng-class="{'fa-arrow-up':setSortIcon('name'),'fa-arrow-down':setSortIconDESC('name')}"></i>
+					</th>
+					<th class="active" ng-class="{'sortActive':nameOrder=='age'}"  ng-click="order('age')">
+						{{'LIST_TABLE_AGE' | translate}} 
+						<i class="fa" aria-hidden="true" ng-class="{'fa-arrow-up':setSortIcon('age'),'fa-arrow-down':setSortIconDESC('age')}"></i>
+					</th>
+					<th class="active" ng-class="{'sortActive':nameOrder=='gender'}"  ng-click="order('gender')">
+						{{'LIST_TABLE_GENDER' | translate}} 
+						<i class="fa" aria-hidden="true" ng-class="{'fa-arrow-up':setSortIcon('gender'),'fa-arrow-down':setSortIconDESC('gender')}"></i>
+					</th>
+				<td class="active"></td>
+			</tr>
+			<tr ng-repeat=" user in users | filter:search">
+				<td class="info">{{user.id}}</td>
+				<td class="active">{{user.username}}</td>
+				<td class="success">{{user.name}}</td>
+				<td class="warning">{{user.age}}</td>
+				<td class="danger" ng-if="user.gender == 'male'">{{'LIST_TABLE_GENDER_MALE' | translate}}</td>
+				<td class="danger" ng-if="user.gender == 'female'">{{'LIST_TABLE_GENDER_FEMALE' | translate}}</td>
+				<td class="info">
+					<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" ng-click="setDeletedId(user.id)">
+						{{'LIST_TABLE_BTN_DELETE' | translate}}
+					</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="container" ng-show="errorLoadData">
+		<div class="alert alert-danger" role="alert" >
+			Da Co loi xay ra:
+			<p class="bg-danger"><i class="fa fa-gavel" aria-hidden="true"></i> {{errorLoadData}}</p>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title" id="myModalLabel">{{'LIST_MODAL_HEADER_DELETE' | translate}}</h4>
+				</div>
+				<div class="modal-body">
+					{{'LIST_MODAL_BODY_DELETE' | translate}} '{{ getUsername(deletedId) }}'
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">{{'LIST_MODAL_BTN_CLOSE' | translate}}</button>
+					<button type="button" class="btn btn-primary" ng-click="delete()" data-toggle="modal" data-target="#myModal">{{'LIST_MODAL_BTN_SAVE' | translate}}</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Pagging-->
+	
+    <uib-pagination total-items="totalAll" items-per-page="take" ng-model="current" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" ng-change="changePage()"></uib-pagination>
+ 
+
+
+
+
+
+</div>
+

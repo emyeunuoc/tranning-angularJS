@@ -1,0 +1,29 @@
+.html{
+	overflow: 
+}
+.center-vertical{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.pagination-sm{
+	position: absolute;
+	right: 20px;
+}
+.col-xs-3{
+	padding: 0;
+	margin:0;
+}
+
+.sortActive{
+	color: #3DAF08;
+}
+
+th{
+	cursor:pointer;
+}
+
+.loading{
+	cursor:progress;
+}
